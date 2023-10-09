@@ -10,7 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "canvas": "2.6.1",
+    "@mapbox/node-pre-gyp": "^1.0.11",
+    "canvas": "^2.6.1",
     "data-uri-to-buffer": "^6.0.1",
     "next": "^13.5.4",
     "react": "^18",
