@@ -25,21 +25,24 @@ export const getServerSideProps = async (
 
 const Page = ({ aid }: Props) => {
     const router = useRouter();
-
+    // リダイレクト
     useEffect(() => {
-        router.push(`/?aid=${aid}`);
+        router.push(`/?title=${aid}`);
     }, []);
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
     return (
         <>
             <Head>
+                <title>てすとにょt</title>
+                <meta charSet="utf-8" />
+                <meta name="description" content="descriptionhhooggee" />
                 <meta property="og:url" content={`${baseUrl}`} />
                 <meta property="og:site_name" content="てすとにょ" />
                 <meta property="og:locate" content="ja_JP" />
                 <meta
                     property="og:image"
                     key="ogImage"
-                    content={`${baseUrl}/api/ogp?aid=${aid}`}
+                    content={`${baseUrl}/api/ogp?title=${aid}`}
                 />
                 <meta
                     name="twitter:card"
@@ -51,12 +54,12 @@ const Page = ({ aid }: Props) => {
                 <meta
                     name="twitter:image"
                     key="twitterImage"
-                    content={`${baseUrl}/api/ogp?aid=${aid}`}
+                    content={`${baseUrl}/api/ogp?title=${aid}`}
                 />
             </Head>
             <div>
                 このページはすぐにリダイレクトされます。リダイレクトされない場合は
-                <a href={`/?aid=${aid}`}>こちら</a>をクリックしてください。
+                <a href={`/?title=${aid}`}>こちら</a>をクリックしてください。
             </div>
         </>
     );
